@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-west-1"
 }
 
 resource "aws_vpc" "devopsshack_vpc" {
@@ -103,9 +103,9 @@ resource "aws_eks_node_group" "devopsshack" {
   subnet_ids      = aws_subnet.devopsshack_subnet[*].id
 
   scaling_config {
-    desired_size = 2
-    max_size     = 2
-    min_size     = 2
+    desired_size = 3
+    max_size     = 3
+    min_size     = 3
   }
 
   instance_types = ["t2.large"]
